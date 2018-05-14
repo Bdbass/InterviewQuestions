@@ -2,7 +2,7 @@ package Google;
 
 public class trie {
     // root node of trie
-    Node root = new Node();
+    private Node root;
 
     // constructor
     trie(Node _root){
@@ -15,14 +15,14 @@ public class trie {
         int i = 0;
 
         // iterates through nodes in the trie
-        while (i < word.length() && temp.children.containsKey(word.charAt(i))){
-            i++;
-            temp = temp.children.get(word.charAt(i));
+        while (i < word.length() &&
+                temp.children.containsKey(word.charAt(i))){
+            temp = temp.children.get(word.charAt(i++));
         }
         //if the word still has letters left, then we want to add those to the trie
         while(i < word.length()){
             Node newNode = new Node(word.charAt(i));
-            temp.children.put(word.charAt(i), newNode);
+            temp.children.put(word.charAt(i++), newNode);
             temp = newNode;
         }
         // now we are at the end of the word so set word to high
@@ -36,7 +36,7 @@ public class trie {
     }
 
     // Prints a trie
-    void PrintTrie(Node root){
+    void PrintTrie(){
         StringBuilder word = new StringBuilder();
         PrintHelper(root, word);
     }

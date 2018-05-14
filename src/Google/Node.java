@@ -10,13 +10,13 @@ public class Node {
     Node(){
         letter = '0';
         word = false;
-        children = null;
+        //children = null;
     }
 
     //overloaded constructor
     Node(char let){
         word = false;
         letter = let;
-        children = null;
+        //children = null;
     }
 }
