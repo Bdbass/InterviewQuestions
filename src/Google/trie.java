@@ -29,12 +29,6 @@ public class trie {
         temp.word = true;
     }
 
-    // returns the node of a letter if it exists, or null if not
-    Node SubString(Node start, char letter){
-        if (start.children.containsKey(letter)) return start.children.get(letter);
-        return null;
-    }
-
     // Prints a trie
     void PrintTrie(){
         StringBuilder word = new StringBuilder();
